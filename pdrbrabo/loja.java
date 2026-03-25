@@ -28,7 +28,7 @@ public class loja {
                 case 1:
                     for (int i = 0; i < qtd; i++) {
                         System.out.print("Digite o nome do produto: ");
-                        sc.nextLine(); // Limpar o buffer do scanner
+                        sc.nextLine();
                         produtos[i] = sc.nextLine();
 
                         System.out.print("Digite o preço do produto: ");
@@ -45,594 +45,31 @@ public class loja {
 
                 case 3:
                     System.out.print("Digite o nome do produto para pesquisar: ");
-                    sc.nextLine(); // Limpar o buffer do scanner
+                    sc.nextLine();
                     String nomePesquisa = sc.nextLine();
                     boolean encontrado = false;
 
                     for (int i = 0; i < qtd; i++) {
-                        if (produtos[i].equalsIgnoreCase(nomePesquisa)) {
+                        if (produtos[i] != null && produtos[i].equalsIgnoreCase(nomePesquisa)) {
                             System.out.println("Produto encontrado: " + produtos[i] + " - R$ " + precos[i]);
                             encontrado = true;
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
+                            break;
+                        }
+                    }
+                    
+                    if (!encontrado) {
                         System.out.println("Produto não encontrado.");
                     }
                     break;
 
                 case 4:
                     System.out.print("Digite o nome do produto para alterar: ");
-                    sc.nextLine(); // Limpar o buffer do scanner
+                    sc.nextLine();
                     String nomeAlterar = sc.nextLine();
                     boolean alterado = false;
 
                     for (int i = 0; i < qtd; i++) {
-                        if (produtos[i].equalsIgnoreCase(nomeAlterar)) {
+                        if (produtos[i] != null && produtos[i].equalsIgnoreCase(nomeAlterar)) {
                             System.out.print("Digite o novo nome do produto: ");
                             produtos[i] = sc.nextLine();
 
@@ -650,12 +87,12 @@ public class loja {
 
                 case 5:
                     System.out.print("Digite o nome do produto para remover: ");
-                    sc.nextLine(); // Limpar o buffer do scanner
+                    sc.nextLine();
                     String nomeRemover = sc.nextLine();
                     boolean removido = false;
 
                     for (int i = 0; i < qtd; i++) {
-                        if (produtos[i].equalsIgnoreCase(nomeRemover)) {
+                        if (produtos[i] != null && produtos[i].equalsIgnoreCase(nomeRemover)) {
                             produtos[i] = null;
                             precos[i] = 0.0;
                             removido = true;
@@ -663,9 +100,13 @@ public class loja {
                             break;
                         }
                     }
-                }
+                    break;
+
+                case 6:
+                    System.out.println("Saindo...");
+                    sc.close();
+                    return;
             }
-       
-    }   
+        }
+    }
 }
-                

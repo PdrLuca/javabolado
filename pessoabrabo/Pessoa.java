@@ -1,10 +1,10 @@
 package pessoabrabo;
 
-public class Poo {
+public class Pessoa {
     private String nome;
     private int idade; 
 
-    public Poo(String nome, int idade) {
+    public Pessoa(String nome, int idade) {
         this.nome= nome;
         this.idade = idade;
     }

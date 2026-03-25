@@ -8,9 +8,6 @@ public class revisao {
         int opcao;
 
         int[] assentos = new int[4];
-        int quantidadeAssentos;
-
-
 
         while(true) {
             System.out.println("1 - Registrar o número de ônibus");
@@ -19,6 +16,7 @@ public class revisao {
             System.out.println("4 - Consultar por ônibus");
             System.out.println("5 - Consultar por passageiro");
             System.out.println("6 - Encerrar");
+            System.out.print("Escolha uma opção: ");
 
             opcao = sc.nextInt();
 
@@ -40,11 +38,9 @@ public class revisao {
                     case 3:
                         System.out.print("Digite o número do ônibus para reservar a passagem: ");
                         int numeroOnibus = sc.nextInt();
-                        boolean encontrado = false;
 
                         for (int i = 0; i < onibus.length; i++) {
                             if (onibus[i] == numeroOnibus) {
-                                encontrado = true;
                                 if (assentos[i] > 0) {
                                     assentos[i]--;
                                     System.out.println("Passagem reservada para o ônibus " + numeroOnibus);
@@ -54,7 +50,7 @@ public class revisao {
                                 break;
                             }
                         }
-
+                        break;
 
                     case 4:
                         System.out.print("Digite o número do ônibus para consultar: ");
@@ -74,13 +70,8 @@ public class revisao {
 
                     case 5:
                         System.out.print("Digite o nome do passageiro para consultar: ");
-                        String nomePassageiro = sc.next();
-                        boolean encontradoPassageiro = false;
-
-                        
-                        if (!encontradoPassageiro) {
-                            System.out.println("Passageiro não encontrado.");
-                        }
+                        sc.next();
+                        System.out.println("Passageiro não encontrado.");
                         break;
                 
                     case 6:

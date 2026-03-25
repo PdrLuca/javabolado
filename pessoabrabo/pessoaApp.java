@@ -1,6 +1,6 @@
 package pessoabrabo;
 
-public class pessoaApp {
+public class PessoaApp {
     public static void main(String[] args) {
 
         Pessoa p1 = new Pessoa("Jõao", 25);
