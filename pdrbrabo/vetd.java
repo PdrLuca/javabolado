@@ -21,5 +21,7 @@ public class vetd {
         for (int i=0; i<3; i++) {
             System.out.println("Nome: " + nome[i] + " Idade: " + idade[i]);
         }
+
+        sc.close();
     }
 }
